@@ -1,0 +1,40 @@
+<h2>Lista zakupów</h2>
+
+<!-- Add Item Form -->
+<form (ngSubmit)="addItem()">
+  <div>
+    <label for="itemName">Item Name:</label>
+    <input
+      id="itemName"
+      type="text"
+      [(ngModel)]="newItemName"
+      name="itemName"
+      placeholder="Enter item name"
+      required
+    />
+  </div>
+  <div>
+    <label for="itemQuantity">Quantity:</label>
+    <input
+      id="itemQuantity"
+      type="number"
+      [(ngModel)]="newItemQuantity"
+      name="itemQuantity"
+      placeholder="Enter quantity"
+      required
+    />
+  </div>
+  <button type="submit">Add Item</button>
+</form>
+
+<!-- Display Shopping List -->
+<ul *ngIf="shoppingItems$ | async as shoppingItems; else loading">
+  <li *ngFor="let item of shoppingItems">
+    {{ item.name }} - {{ item.quantity }}
+    <button (click)="removeItem(item.id)">Remove</button>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <p>Ładowanie...</p>
+</ng-template>
