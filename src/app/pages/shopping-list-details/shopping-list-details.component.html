@@ -1,0 +1,31 @@
+<div class="p-4 max-w-2xl mx-auto">
+  <h2 class="text-2xl font-semibold mb-4">{{ listName }}</h2>
+  <p class="text-sm text-gray-500 mb-2">Planned Date: {{ plannedDate }}</p>
+
+  <!-- Form and item list... -->
+  
+  <form (ngSubmit)="addItem()" class="flex gap-2 mb-4 items-center">
+    <input [(ngModel)]="newItemName" name="name" required placeholder="Product Name" class="input input-bordered flex-1" />
+    <input type="number" [(ngModel)]="newItemQty" name="qty" min="1" placeholder="Qty" class="input input-bordered w-20" />
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  <ul class="space-y-2">
+    <li *ngFor="let item of items$ | async" class="p-3 bg-gray-100 rounded flex justify-between items-center">
+      <span>{{ item.name }} (x{{ item.quantity }})</span>
+      <button (click)="removeItem(item.id)" class="btn btn-sm btn-error">Delete</button>
+    </li>
+  </ul>
+
+  <!-- Show map if coordinates exist -->
+
+  <div class="h-64 border rounded overflow-hidden my-4" *ngIf="coordinates">
+    <google-map
+      [center]="coordinates"
+      [zoom]="15"
+      height="400px"
+      width="100%">
+      <map-marker [position]="coordinates" [label]="'Shop'"></map-marker>
+    </google-map>
+  </div>
+</div>

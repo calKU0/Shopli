@@ -1,0 +1,17 @@
+<div class="p-4">
+    <h1 class="text-xl font-bold mb-4">Your Shopping Lists</h1>
+    <button (click)="openAddListModal()" class="btn btn-primary mb-4">Add New List</button>
+    <app-add-shopping-list *ngIf="showAddModal" (close)="closeAddListModal()"></app-add-shopping-list>
+    <div *ngIf="shoppingLists$ | async as lists; else loading">
+      <div *ngIf="lists.length > 0; else noLists">
+        <div *ngFor="let list of lists" (click)="goToList(list.id)" class="border p-4 mb-2 rounded shadow cursor-pointer">
+          <div class="font-semibold text-lg">{{ list.name }}</div>
+          <div class="text-sm text-gray-500">{{ list.shopName }} — {{ list.plannedDate | date }}</div>
+          <div class="text-sm">Products: {{ list.itemCount }}</div>
+        </div>
+      </div>
+      <ng-template #noLists>No shopping lists yet.</ng-template>
+    </div>
+    <ng-template #loading>Loading...</ng-template>
+  </div>
+  
