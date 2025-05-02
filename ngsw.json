@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1746214396713,
+  "timestamp": 1746216390150,
   "index": "C:/Program Files/Git/AngularShoppingList/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "C:/Program Files/Git/AngularShoppingList/favicon.ico",
         "C:/Program Files/Git/AngularShoppingList/firebase-messaging-sw.js",
         "C:/Program Files/Git/AngularShoppingList/index.html",
-        "C:/Program Files/Git/AngularShoppingList/main-TF2PKVHO.js",
+        "C:/Program Files/Git/AngularShoppingList/main-7TOX365O.js",
         "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest",
         "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js",
         "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css"
@@ -53,8 +53,8 @@
     "C:/Program Files/Git/AngularShoppingList/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "C:/Program Files/Git/AngularShoppingList/index.html": "deadcdee3566cc194a8c6381c8e4722b51de16de",
-    "C:/Program Files/Git/AngularShoppingList/main-TF2PKVHO.js": "17b8fdd97da9c71fb1eee1be58c00d65da1b5671",
+    "C:/Program Files/Git/AngularShoppingList/index.html": "d913d4ec96ad79ee69738c6e8fc3c6f2126fcd26",
+    "C:/Program Files/Git/AngularShoppingList/main-7TOX365O.js": "4ef1ed12c96625535ed2a596b9bbbe2440541554",
     "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest": "b00fb86e285eb01933038ab689720d61fae4a78a",
     "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css": "b8eec02eca9b7c76fee545af7cc67c03bc565a52"
