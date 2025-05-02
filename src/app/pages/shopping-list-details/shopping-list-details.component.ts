@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { AddProductComponent} from '../../components/add-product/add-product.component'
 
 @Component({
   selector: 'app-shopping-list-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, GoogleMapsModule],
+  imports: [CommonModule, FormsModule, GoogleMapsModule, AddProductComponent],
   templateUrl: './shopping-list-details.component.html'
 })
 export class ShoppingListDetailsComponent implements OnInit {
@@ -50,18 +51,11 @@ export class ShoppingListDetailsComponent implements OnInit {
     this.items$ = collectionData(itemsCollection, { idField: 'id' });
   }
   
-
-  async addItem() {
-    if (!this.newItemName || !this.newItemQty || !this.user) return;
-
+  addItemFromChild(product: { name: string; quantity: number }) {
+    if (!this.user) return;
+  
     const itemsCollection = collection(this.firestore, 'shoppingLists', this.user.uid, 'lists', this.listId, 'items');
-    await addDoc(itemsCollection, {
-      name: this.newItemName,
-      quantity: this.newItemQty
-    });
-
-    this.newItemName = '';
-    this.newItemQty = 1;
+    addDoc(itemsCollection, product);
   }
 
   async removeItem(itemId: string) {

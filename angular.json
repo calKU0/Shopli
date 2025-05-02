@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lista-zakupow": {
+    "AngularShoppingList": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/lista-zakupow",
+            "outputPath": "dist/AngularShoppingList",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lista-zakupow:build:production"
+              "buildTarget": "AngularShoppingList:build:production"
             },
             "development": {
-              "buildTarget": "lista-zakupow:build:development"
+              "buildTarget": "AngularShoppingList:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,6 +93,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

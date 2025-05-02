@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { ShopMapComponent } from '../shop-map/shop-map.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BarcodeFormat } from '@zxing/library';
+import { AddProductComponent} from '../add-product/add-product.component'
 
 @Component({
   selector: 'app-add-shopping-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, ShopMapComponent,ZXingScannerModule],
+  imports: [CommonModule, FormsModule, ShopMapComponent, ZXingScannerModule, AddProductComponent],
   templateUrl: './add-shopping-list.component.html'
 })
 export class AddShoppingListComponent {
@@ -46,54 +47,6 @@ startScanning() {
 stopScanning() {
   this.isScanning = false;
 }
-
-
-
-addItemToList() {
-  if (!this.newItemName || !this.newItemQty) return;
-
-  this.items.push({
-    name: this.newItemName,
-    quantity: this.newItemQty
-  });
-
-  this.newItemName = '';
-  this.newItemQty = 1;
-}
-
-async onCodeResult(barcode: string) {
-  if (!barcode) return;
-
-  console.log('Scanned barcode:', barcode);
-
-  this.isScanning = false; // 👈 Hide scanner after successful scan
-
-  const productName = await this.fetchProductNameFromBarcode(barcode);
-  if (productName) {
-    this.newItemName = productName;
-    this.newItemQty = 1;
-  } else {
-    alert('Product not found for this barcode.');
-  }
-}
-
-
-async fetchProductNameFromBarcode(barcode: string): Promise<string | null> {
-  try {
-    const response = await fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`);
-    const data = await response.json();
-    if (data.status === 1) {
-      return data.product.product_name || null;
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.error('Error fetching product:', error);
-    return null;
-  }
-}
-
-
 
   async createList() {
     if (!this.user || !this.selectedLocation || !this.listName || !this.plannedDate) return;

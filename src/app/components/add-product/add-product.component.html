@@ -1,0 +1,21 @@
+<div class="space-y-2">
+    <div class="flex gap-2">
+      <input [(ngModel)]="newItemName" placeholder="Item Name" class="flex-1 input input-bordered" name="itemName" />
+      <input [(ngModel)]="newItemQty" type="number" min="1" class="w-20 input input-bordered" name="itemQty" />
+  
+      <button *ngIf="enableScanner" type="button" (click)="startScanning()" class="btn btn-accent">Scan</button>
+      <button type="button" (click)="addItem()" class="btn btn-secondary">Add</button>
+    </div>
+  
+    <div *ngIf="isScanning" class="space-y-2">
+      <zxing-scanner
+        [formats]="allowedFormats"
+        (scanSuccess)="onCodeResult($event)"
+        [torch]="true"
+        class="w-full h-64 border rounded"
+      ></zxing-scanner>
+  
+      <button type="button" (click)="stopScanning()" class="btn btn-error w-full">Cancel</button>
+    </div>
+  </div>
+  

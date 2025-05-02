@@ -1,7 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../enviroment';
 
 @Component({
   selector: 'app-shop-map',
@@ -17,11 +16,7 @@ export class ShopMapComponent implements OnInit {
   zoom = 14;
   mapReady = false;
 
-  async ngOnInit() {
-    await this.loadGoogleMapsScript();
-
-    this.mapReady = true;
-
+  async ngOnInit() { 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
@@ -37,6 +32,7 @@ export class ShopMapComponent implements OnInit {
       );
     }
   }
+  
 
   onMapClick(event: google.maps.MapMouseEvent) {
     if (event.latLng) {
@@ -46,22 +42,5 @@ export class ShopMapComponent implements OnInit {
       this.locationSelected.emit({ lat, lng });
     }
   }
-
-  private loadGoogleMapsScript(): Promise<void> {
-    return new Promise((resolve, reject) => {
-      if ((window as any)['google'] && (window as any)['google'].maps) {
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}&libraries=places`;
-      script.async = true;
-      script.defer = true;
-      script.onload = () => resolve();
-      script.onerror = (error) => reject(error);
-
-      document.body.appendChild(script);
-    });
-  }
+  
 }

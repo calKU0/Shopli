@@ -4,11 +4,7 @@
 
   <!-- Form and item list... -->
   
-  <form (ngSubmit)="addItem()" class="flex gap-2 mb-4 items-center">
-    <input [(ngModel)]="newItemName" name="name" required placeholder="Product Name" class="input input-bordered flex-1" />
-    <input type="number" [(ngModel)]="newItemQty" name="qty" min="1" placeholder="Qty" class="input input-bordered w-20" />
-    <button type="submit" class="btn btn-primary">Add</button>
-  </form>
+  <app-add-product [enableScanner] = "true" (productAdded)="addItemFromChild($event)"></app-add-product>
 
   <ul class="space-y-2">
     <li *ngFor="let item of items$ | async" class="p-3 bg-gray-100 rounded flex justify-between items-center">

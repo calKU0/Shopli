@@ -7,32 +7,8 @@
     <app-shop-map (locationSelected)="onLocationSelected($event)"></app-shop-map>
   </div>
 
-  <div class="space-y-2">
-    <div class="flex gap-2">
-      <input [(ngModel)]="newItemName" name="newItemName" placeholder="Item Name" class="flex-1 input input-bordered" />
-      <input [(ngModel)]="newItemQty" name="newItemQty" type="number" min="1" class="w-20 input input-bordered" />
-      
-      <button type="button" (click)="startScanning()" class="btn btn-accent">Add with QR</button>
-      <button type="button" (click)="addItemToList()" class="btn btn-secondary">Add Item</button>
-    </div>
-  
-    <div *ngIf="isScanning" class="space-y-2">
-      <zxing-scanner
-        [formats]="allowedFormats"
-        (scanSuccess)="onCodeResult($event)"
-        [torch]="true"
-        class="w-full h-64 border rounded"
-      ></zxing-scanner>
-  
-      <button type="button" (click)="stopScanning()" class="btn btn-error w-full">Cancel Scanning</button>
-    </div>
-  
-    <ul class="list-disc pl-5">
-      <li *ngFor="let item of items">
-        {{ item.name }} (x{{ item.quantity }})
-      </li>
-    </ul>
-  </div>
+  <app-add-product [enableScanner]="true" (productAdded)="items.push($event)"></app-add-product>
+
 
   <button type="submit"
           [disabled]="!listName || !plannedDate || !selectedLocation || items.length === 0"

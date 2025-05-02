@@ -8,6 +8,7 @@ export const environment = {
     messagingSenderId: 'key',
     appId: 'key',
     measurementId: 'key',
+    vapidKey: 'key',
   },
-  googleMapsApiKey: 'key'
+  googleMapsApiKey: 'key',
 };
