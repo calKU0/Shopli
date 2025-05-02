@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1745825191965,
+  "timestamp": 1746175782569,
   "index": "C:/Program Files/Git/AngularShoppingList/index.html",
   "assetGroups": [
     {
@@ -12,8 +12,9 @@
       },
       "urls": [
         "C:/Program Files/Git/AngularShoppingList/favicon.ico",
+        "C:/Program Files/Git/AngularShoppingList/firebase-messaging-sw.js",
         "C:/Program Files/Git/AngularShoppingList/index.html",
-        "C:/Program Files/Git/AngularShoppingList/main-CFI4KYLG.js",
+        "C:/Program Files/Git/AngularShoppingList/main-7AOERCSL.js",
         "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest",
         "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js",
         "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css"
@@ -43,6 +44,7 @@
   "dataGroups": [],
   "hashTable": {
     "C:/Program Files/Git/AngularShoppingList/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "C:/Program Files/Git/AngularShoppingList/firebase-messaging-sw.js": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
@@ -51,8 +53,8 @@
     "C:/Program Files/Git/AngularShoppingList/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "C:/Program Files/Git/AngularShoppingList/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "C:/Program Files/Git/AngularShoppingList/index.html": "0d9ac6f68d9e1d9b73490a950ae58076e069bebe",
-    "C:/Program Files/Git/AngularShoppingList/main-CFI4KYLG.js": "81d5ac87b862b11bb67eda7e457cd79c7b86a462",
+    "C:/Program Files/Git/AngularShoppingList/index.html": "ecadee6248994edadd19bc15db9c0381bda92b4d",
+    "C:/Program Files/Git/AngularShoppingList/main-7AOERCSL.js": "b6044caa5d963fcf6585af31f7f3ccf588ce0bdd",
     "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest": "b00fb86e285eb01933038ab689720d61fae4a78a",
     "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css": "b8eec02eca9b7c76fee545af7cc67c03bc565a52"
