@@ -10,6 +10,7 @@ import {
 import { inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent {
   password: string = '';
   isLoginMode: boolean = true; // Toggle between Login and Registration forms
 
+  private firestore = inject(Firestore);
   private auth = inject(Auth);
   private router = inject(Router);
 
@@ -37,8 +39,7 @@ export class LoginComponent {
   onLogin() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then((userCredential) => {
-        console.log('Zalogowano pomyślnie:', userCredential);
-        this.router.navigate(['/list']); // Redirect after login
+        this.router.navigate(['']); // Redirect after login
       })
       .catch((error) => {
         console.error('Błąd logowania:', error.message);
@@ -48,9 +49,20 @@ export class LoginComponent {
   // Handle Email/Password Registration
   onRegister() {
     createUserWithEmailAndPassword(this.auth, this.email, this.password)
-      .then((userCredential) => {
-        console.log('Zarejestrowano pomyślnie:', userCredential);
-        this.router.navigate(['/list']); // Redirect after registration
+      .then(async (userCredential) => {
+        // Get user details
+        const user = userCredential.user;
+
+        // Save user info to Firestore (in 'users' collection)
+        const userDocRef = doc(this.firestore, 'users', user.uid); // Reference to the user's document
+        await setDoc(userDocRef, {
+          uid: user.uid,
+          email: user.email,
+          createdAt: new Date(), // You can add other fields as needed
+        });
+
+        // After Firestore update, navigate to another page
+        this.router.navigate(['']); // Redirect after registration
       })
       .catch((error) => {
         console.error('Błąd rejestracji:', error.message);
@@ -62,8 +74,17 @@ export class LoginComponent {
     const provider = new GoogleAuthProvider();
     signInWithPopup(this.auth, provider)
       .then((userCredential) => {
-        console.log('Zalogowano przez Google:', userCredential);
-        this.router.navigate(['/list']); // Redirect after Google login
+        const user = userCredential.user;
+
+        // Save user info to Firestore (in 'users' collection)
+        const userDocRef = doc(this.firestore, 'users', user.uid); // Reference to the user's document
+        setDoc(userDocRef, {
+          uid: user.uid,
+          email: user.email,
+          createdAt: new Date(), // You can add other fields as needed
+        });
+
+        this.router.navigate(['']); // Redirect after Google login
       })
       .catch((error) => {
         console.error('Błąd logowania przez Google:', error.message);

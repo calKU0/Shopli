@@ -1,5 +1,5 @@
 <google-map
-  height="400px"
+  height="100%"
   width="100%"
   [center]="center"
   [zoom]="zoom"
@@ -9,5 +9,6 @@
     *ngIf="markerPosition"
     [position]="markerPosition"
     [label]="'Selected Location'"
-  ></map-marker>
+  >
+  </map-marker>
 </google-map>

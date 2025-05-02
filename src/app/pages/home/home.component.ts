@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { Auth } from '@angular/fire/auth';
+import { signOut } from 'firebase/auth';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink], // Add RouterLink here for routing
-  templateUrl: './home.component.html', // Reference the HTML file here
+  imports: [RouterLink],
+  templateUrl: './home.component.html',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  private auth = inject(Auth);
+  private router = inject(Router);
+
+  logout() {
+    signOut(this.auth).then(() => {
+      this.router.navigate(['/login']);
+    });
+  }
+}

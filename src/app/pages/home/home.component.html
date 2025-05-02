@@ -1,4 +1,19 @@
-<h2>Witaj w aplikacji Lista Zakupów!</h2>
-<p>Rozpocznij tworzenie swojej listy zakupów.</p>
-<button [routerLink]="['/login']">Zaloguj się</button>
-<button [routerLink]="['/list']">Przejdź do listy zakupów</button>
+<div class="text-center p-4">
+  <h2 class="mb-3">Welcome to Your Shopping List!</h2>
+  <p class="mb-3">
+    This app helps you easily create, manage, and plan your shopping lists. Add
+    products manually or by barcode scanning, choose shopping locations, and
+    access your lists from any device.
+  </p>
+  <p class="mb-4">
+    Whether you're doing weekly groceries or preparing for a big event, this app
+    keeps your shopping organized and stress-free.
+  </p>
+
+  <div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-outline-danger me-2" (click)="logout()">
+      Log Out
+    </button>
+    <a routerLink="/list" class="btn btn-primary">Go to My Shopping Lists</a>
+  </div>
+</div>

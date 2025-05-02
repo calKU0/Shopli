@@ -1,39 +1,45 @@
-<div>
-  <h2>{{ isLoginMode ? "Login" : "Register" }}</h2>
+<div class="container mt-4" style="max-width: 400px">
+  <h2 class="text-center mb-4">{{ isLoginMode ? "Login" : "Register" }}</h2>
 
   <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="email">Email:</label>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
       <input
         type="email"
         id="email"
         [(ngModel)]="email"
         name="email"
         required
+        class="form-control"
       />
     </div>
 
-    <div>
-      <label for="password">Password:</label>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
       <input
         type="password"
         id="password"
         [(ngModel)]="password"
         name="password"
         required
+        class="form-control"
       />
     </div>
 
-    <button type="submit">{{ isLoginMode ? "Login" : "Register" }}</button>
+    <button type="submit" class="btn btn-primary w-100">
+      {{ isLoginMode ? "Login" : "Register" }}
+    </button>
   </form>
 
-  <div>
-    <button (click)="toggleMode()">
+  <div class="text-center mt-3">
+    <button class="btn btn-link" (click)="toggleMode()">
       {{ isLoginMode ? "Switch to Register" : "Switch to Login" }}
     </button>
   </div>
 
-  <div>
-    <button (click)="loginWithGoogle()">Login with Google</button>
+  <div class="text-center">
+    <button class="btn btn-outline-danger mt-2" (click)="loginWithGoogle()">
+      {{ isLoginMode ? "Login with Google" : "Register with Google" }}
+    </button>
   </div>
 </div>
