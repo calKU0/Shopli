@@ -16,31 +16,31 @@ export class ShopMapComponent implements OnInit {
   zoom = 14;
   mapReady = false;
 
-  async ngOnInit() { 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          this.center = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
+  async ngOnInit() {
+    const geo = navigator.geolocation;
+
+    if (geo) {
+      geo.getCurrentPosition(
+        ({ coords }) => {
+          const { latitude: lat, longitude: lng } = coords;
+          this.center = { lat, lng };
         },
-        error => {
+        (error) => {
           console.warn('Geolocation permission denied or unavailable.', error);
           // fallback to default (Kraków)
         }
       );
     }
   }
-  
 
   onMapClick(event: google.maps.MapMouseEvent) {
-    if (event.latLng) {
-      const lat = event.latLng.lat();
-      const lng = event.latLng.lng();
+    const coords = event.latLng;
+
+    if (coords) {
+      const lat = coords.lat();
+      const lng = coords.lng();
       this.markerPosition = { lat, lng };
       this.locationSelected.emit({ lat, lng });
     }
   }
-  
 }
