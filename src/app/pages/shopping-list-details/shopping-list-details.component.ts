@@ -57,14 +57,14 @@ export class ShoppingListDetailsComponent implements OnInit {
   }
 
   async loadListDetails() {
-    const listRef = doc(
-      this.firestore,
-      'shoppingLists',
-      this.user!.uid,
-      'lists',
-      this.listId
-    );
+    const listRef = doc(this.firestore, 'shoppingLists', this.listId);
     const listSnap = await getDoc(listRef);
+
+    if (!listSnap.exists()) {
+      console.error('Shopping list not found');
+      return;
+    }
+
     const listData = listSnap.data() as any;
 
     this.listName = listData.name;
@@ -74,7 +74,8 @@ export class ShoppingListDetailsComponent implements OnInit {
     const productsCollection = collection(this.firestore, 'products');
     const filteredQuery = query(
       productsCollection,
-      where('listId', '==', this.listId)
+      where('listId', '==', this.listId),
+      where('userId', '==', this.user!.uid)
     );
     this.items$ = collectionData(filteredQuery, { idField: 'id' });
   }

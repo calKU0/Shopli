@@ -34,7 +34,6 @@ export class ShoppingListsComponent implements OnInit {
   ngOnInit() {
     onAuthStateChanged(this.auth, (user) => {
       if (!user) return;
-      console.log('User is logged in:', user.uid); // <--- add this
       this.user = user;
       this.loadShoppingLists(user);
     });
@@ -42,16 +41,13 @@ export class ShoppingListsComponent implements OnInit {
 
   // Fetch shopping lists and count the number of items in each list
   loadShoppingLists(user: User) {
-    const colRef = collection(
-      this.firestore,
-      'shoppingLists',
-      user.uid,
-      'lists'
-    );
+    const colRef = collection(this.firestore, 'shoppingLists');
+    const userListsQuery = query(colRef, where('userId', '==', user.uid));
 
-    this.shoppingLists$ = collectionData(colRef, { idField: 'id' }).pipe(
+    this.shoppingLists$ = collectionData(userListsQuery, {
+      idField: 'id',
+    }).pipe(
       switchMap((lists) => {
-        // Create an observable that will resolve all item counts
         const listsWithCounts$ = lists.map((list: any) => {
           return this.getItemCount(list.id).pipe(
             map((itemCount) => ({
@@ -60,8 +56,7 @@ export class ShoppingListsComponent implements OnInit {
             }))
           );
         });
-
-        return forkJoin(listsWithCounts$); // Resolves all the item count observables
+        return forkJoin(listsWithCounts$);
       })
     );
   }
@@ -94,16 +89,18 @@ export class ShoppingListsComponent implements OnInit {
     );
     if (!confirmed) return;
 
-    const listDocRef = doc(
-      this.firestore,
-      'shoppingLists',
-      this.user.uid,
-      'lists',
-      listId
-    );
+    const listDocRef = doc(this.firestore, 'shoppingLists', listId);
     await deleteDoc(listDocRef);
 
-    // Force refresh by re-triggering data load
+    // Optionally, delete associated products too
+    const productsRef = collection(this.firestore, 'products');
+    const listProductsQuery = query(productsRef, where('listId', '==', listId));
+    const productSnapshots = await getDocs(listProductsQuery);
+    const deletions = productSnapshots.docs.map((docSnap) =>
+      deleteDoc(doc(this.firestore, 'products', docSnap.id))
+    );
+    await Promise.all(deletions);
+
     this.reloadLists();
   }
 

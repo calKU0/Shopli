@@ -11,18 +11,25 @@ export class MessagingService {
   private firestore = inject(Firestore);
   private auth = inject(Auth);
 
-  requestPermissionAndSaveToken() {
-    getToken(this.messaging, {
-      vapidKey: environment.firebase.vapidKey
-    }).then(async (token) => {
+  async requestPermissionAndSaveToken() {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        '/AngularShoppingList/firebase-messaging-sw.js'
+      );
+
+      const token = await getToken(this.messaging, {
+        vapidKey: environment.firebase.vapidKey,
+        serviceWorkerRegistration: registration,
+      });
+
       const user = this.auth.currentUser;
       if (user && token) {
         const ref = doc(this.firestore, `users/${user.uid}`);
         await setDoc(ref, { fcmToken: token }, { merge: true });
       }
-    }).catch(err => {
+    } catch (err) {
       console.error('Unable to get notification permission:', err);
-    });
+    }
   }
 
   listenForMessages() {

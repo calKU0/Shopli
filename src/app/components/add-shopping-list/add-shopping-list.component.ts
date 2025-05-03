@@ -71,13 +71,9 @@ export class AddShoppingListComponent {
     )
       return;
 
-    const listsCollection = collection(
-      this.firestore,
-      'shoppingLists',
-      this.user.uid,
-      'lists'
-    );
+    const listsCollection = collection(this.firestore, 'shoppingLists');
     const listDocRef = await addDoc(listsCollection, {
+      userId: this.user.uid,
       name: this.listName,
       plannedDate: this.plannedDate,
       coordinates: this.selectedLocation,
@@ -85,7 +81,7 @@ export class AddShoppingListComponent {
 
     const productsCollection = collection(this.firestore, 'products');
     for (const item of this.items) {
-      const productId = uuidv4(); // generate unique ID
+      const productId = uuidv4();
       await setDoc(doc(productsCollection, productId), {
         ...item,
         listId: listDocRef.id,

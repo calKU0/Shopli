@@ -8,6 +8,7 @@
     (productAdded)="addItemFromChild($event)"
   ></app-add-product>
 
+  <h5 class="mb-2">Added Products:</h5>
   <ul class="list-group mb-4">
     <li
       *ngFor="let item of items$ | async"

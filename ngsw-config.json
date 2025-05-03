@@ -11,6 +11,7 @@
           "/index.csr.html",
           "/index.html",
           "/manifest.webmanifest",
+          "/firebase-messaging-sw.js",
           "/*.css",
           "/*.js"
         ]

@@ -8,26 +8,27 @@
         class="form-control"
       />
     </div>
-    <div class="col-1">
+    <div class="col-4 col-md-1">
       <input
         [(ngModel)]="newItemQty"
         type="number"
+        placeholder="Qty"
         min="1"
         name="itemQty"
-        class="form-control"
+        class="form-control w-100"
       />
     </div>
-    <div class="col-auto" *ngIf="enableScanner">
+    <div class="col-md-auto col-6" *ngIf="enableScanner">
       <button
         type="button"
         (click)="startScanning()"
-        class="btn btn-outline-info"
+        class="btn btn-outline-info w-100"
       >
         Scan
       </button>
     </div>
-    <div class="col-auto">
-      <button type="button" (click)="addItem()" class="btn btn-success">
+    <div class="col-md-auto col-6">
+      <button type="button" (click)="addItem()" class="btn btn-success w-100">
         Add
       </button>
     </div>
@@ -47,7 +48,7 @@
       (click)="stopScanning()"
       class="btn btn-danger mt-2 w-100"
     >
-      Cancel
+      Cancel Scanning
     </button>
   </div>
 </div>
