@@ -1,19 +1,45 @@
-<div class="text-center p-4">
-  <h2 class="mb-3">Welcome to Your Shopping List!</h2>
-  <p class="mb-3">
-    This app helps you easily create, manage, and plan your shopping lists. Add
-    products manually or by barcode scanning, choose shopping locations, and
-    access your lists from any device.
-  </p>
-  <p class="mb-4">
-    Whether you're doing weekly groceries or preparing for a big event, this app
-    keeps your shopping organized and stress-free.
-  </p>
-
-  <div class="d-grid gap-2 d-md-block">
-    <button class="btn btn-outline-danger me-2" (click)="logout()">
-      Log Out
-    </button>
-    <a routerLink="/list" class="btn btn-primary">Go to My Shopping Lists</a>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="text-center p-4">
+    <h2 class="mb-3">Welcome to Shopli!</h2>
+    <p class="mb-3 secondary-font">
+      Create and manage shopping lists with ease.
+    </p>
+    <p class="mb-4 secondary-font">
+      Add items manually or by barcode scanning, choose shopping locations, and
+      access your lists anytime, anywhere.
+    </p>
+    <h2 class="mb-4">Great for:</h2>
+    <h6 class="mb-2 d-flex align-items-center">
+      <img
+        class="img-fluid home-icon me-2"
+        src="/icons/gift.png"
+        alt="Gift icon"
+      />
+      Gift shopping
+    </h6>
+    <h6 class="mb-2 d-flex align-items-center">
+      <img
+        class="img-fluid home-icon me-2"
+        src="/icons/party.png"
+        alt="Party icon"
+      />
+      Planning great parties
+    </h6>
+    <h6 class="mb-2 d-flex align-items-center">
+      <img
+        class="img-fluid home-icon me-2"
+        src="/icons/groceries.png"
+        alt="Groceries icon"
+      />
+      Groceries
+    </h6>
+    <div class="d-grid gap-3 d-block mt-5">
+      <button routerLink="/list" class="btn btn-primary rounded-5">
+        Your lists
+      </button>
+      <button class="btn btn-danger me-2 rounded-5" (click)="logout()">
+        Log Out
+      </button>
+    </div>
   </div>
 </div>

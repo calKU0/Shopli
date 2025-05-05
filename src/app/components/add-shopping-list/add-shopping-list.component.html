@@ -1,6 +1,6 @@
 <form
   (ngSubmit)="createList()"
-  class="p-3 border rounded shadow-sm bg-light mb-3"
+  class="p-3 border rounded shadow-sm bg-light mb-3 secondary-font"
 >
   <div class="mb-3">
     <input
@@ -23,7 +23,7 @@
   </div>
 
   <div class="mb-3">
-    <div class="border rounded" style="height: 300px">
+    <div class="border rounded" style="height: 250px">
       <app-shop-map
         (locationSelected)="onLocationSelected($event)"
       ></app-shop-map>

@@ -1,39 +1,40 @@
-<div class="mb-3">
-  <div class="row g-2 align-items-end">
-    <div class="col-auto">
+<div class="mb-3 secondary-font">
+  <div class="row g-2">
+    <!-- Item Name Input -->
+    <div class="col-8 col-md-auto d-flex flex-column">
       <input
         [(ngModel)]="newItemName"
         placeholder="Item Name"
         name="itemName"
         class="form-control"
       />
+      <button
+        *ngIf="enableScanner"
+        type="button"
+        (click)="startScanning()"
+        class="btn btn-outline-info mt-2"
+      >
+        Scan
+      </button>
     </div>
-    <div class="col-4 col-md-1">
+
+    <!-- Quantity Input -->
+    <div class="col-4 col-md-auto d-flex flex-column">
       <input
         [(ngModel)]="newItemQty"
         type="number"
         placeholder="Qty"
         min="1"
         name="itemQty"
-        class="form-control w-100"
+        class="form-control"
       />
-    </div>
-    <div class="col-md-auto col-6" *ngIf="enableScanner">
-      <button
-        type="button"
-        (click)="startScanning()"
-        class="btn btn-outline-info w-100"
-      >
-        Scan
-      </button>
-    </div>
-    <div class="col-md-auto col-6">
-      <button type="button" (click)="addItem()" class="btn btn-success w-100">
+      <button type="button" (click)="addItem()" class="btn btn-success mt-2">
         Add
       </button>
     </div>
   </div>
 
+  <!-- Scanner View -->
   <div *ngIf="isScanning" class="mt-3">
     <zxing-scanner
       [formats]="allowedFormats"

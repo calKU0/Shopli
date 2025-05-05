@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import {
   Auth,
@@ -15,13 +16,15 @@ import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule], // Add FormsModule here for ngModel
-  templateUrl: './login.component.html', // Reference the HTML file here
+  imports: [FormsModule, CommonModule],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  isLoginMode: boolean = true; // Toggle between Login and Registration forms
+  isLoginMode: boolean = true;
+  fullName: string = '';
 
   private firestore = inject(Firestore);
   private auth = inject(Auth);
@@ -35,63 +38,59 @@ export class LoginComponent {
     }
   }
 
-  // Handle Email/Password Login
   onLogin() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then((userCredential) => {
-        this.router.navigate(['']); // Redirect after login
+        this.router.navigate(['']);
       })
       .catch((error) => {
         console.error('Błąd logowania:', error.message);
       });
   }
 
-  // Handle Email/Password Registration
   onRegister() {
     createUserWithEmailAndPassword(this.auth, this.email, this.password)
       .then(async (userCredential) => {
-        // Get user details
         const user = userCredential.user;
 
-        // Save user info to Firestore (in 'users' collection)
-        const userDocRef = doc(this.firestore, 'users', user.uid); // Reference to the user's document
+        const userDocRef = doc(this.firestore, 'users', user.uid);
         await setDoc(userDocRef, {
           uid: user.uid,
           email: user.email,
-          createdAt: new Date(), // You can add other fields as needed
+          fullName: this.fullName,
+          createdAt: new Date(),
         });
 
-        // After Firestore update, navigate to another page
-        this.router.navigate(['']); // Redirect after registration
+        this.router.navigate(['']);
       })
       .catch((error) => {
-        console.error('Błąd rejestracji:', error.message);
+        console.error('Registration error:', error.message);
       });
   }
 
-  // Handle Google Login
   loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(this.auth, provider)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
+        const displayName = user.displayName || '';
+        const fullName = user.displayName || '';
 
-        // Save user info to Firestore (in 'users' collection)
-        const userDocRef = doc(this.firestore, 'users', user.uid); // Reference to the user's document
-        setDoc(userDocRef, {
+        const userDocRef = doc(this.firestore, 'users', user.uid);
+        await setDoc(userDocRef, {
           uid: user.uid,
           email: user.email,
-          createdAt: new Date(), // You can add other fields as needed
+          fullName: fullName,
+          createdAt: new Date(),
         });
 
-        this.router.navigate(['']); // Redirect after Google login
+        this.router.navigate(['']);
       })
       .catch((error) => {
-        console.error('Błąd logowania przez Google:', error.message);
+        console.error('Google login error:', error.message);
       });
   }
 
-  // Toggle between Login and Register mode
   toggleMode() {
     this.isLoginMode = !this.isLoginMode;
   }

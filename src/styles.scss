@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+
+@font-face {
+  font-family: "Norwester";
+  src: url("/fonts/norwester.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "NORWESTER";
+  color: #efefef;
+}
+
+body {
+  background-image: url("/app-bg.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  min-height: 100%;
+}
+
+.secondary-font {
+  font-family: "Cardo" !important;
+}
+
+button {
+  font-family: "Cardo" !important;
+}

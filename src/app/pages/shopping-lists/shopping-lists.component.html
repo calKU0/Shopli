@@ -1,43 +1,55 @@
-<div class="container py-3">
-  <app-back-button></app-back-button>
-  <h1 class="mb-3">Your Shopping Lists</h1>
-  <button (click)="openAddListModal()" class="btn btn-primary mb-3">
-    Add New List
-  </button>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="container p-3 m-3 text-center">
+    <h1 class="mb-4">Your Lists</h1>
 
-  <app-add-shopping-list
-    *ngIf="showAddModal"
-    (close)="closeAddListModal()"
-  ></app-add-shopping-list>
+    <app-add-shopping-list
+      *ngIf="showAddModal"
+      (close)="closeAddListModal()"
+    ></app-add-shopping-list>
 
-  <ng-container *ngIf="shoppingLists$ | async as lists; else noLists">
-    <ng-container *ngIf="lists.length > 0; else noLists">
-      <div *ngFor="let list of lists" class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">{{ list.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            {{ list.shopName }} — {{ list.plannedDate | date }}
-          </h6>
-          <p class="card-text">Products: {{ list.itemCount }}</p>
+    <ng-container *ngIf="shoppingLists$ | async as lists; else noLists">
+      <ng-container *ngIf="lists.length > 0; else noLists">
+        <div
+          *ngFor="let list of lists"
+          class="card mb-3 shadow-sm text-start secondary-font rounded-4"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ list.name }}</h5>
+            <h6 class="card-subtitle text-muted">
+              {{ list.plannedDate | date }}
+            </h6>
+            <p class="card-text">Products: {{ list.itemCount }}</p>
 
-          <div class="d-flex gap-2 mt-3">
-            <button
-              (click)="goToList(list.id)"
-              class="btn btn-outline-primary btn-sm"
-            >
-              View
-            </button>
-            <button
-              (click)="deleteList(list.id)"
-              class="btn btn-outline-danger btn-sm"
-            >
-              Delete
-            </button>
+            <div class="d-flex gap-2">
+              <button
+                (click)="goToList(list.id)"
+                class="btn btn-outline-primary btn-sm rounded-3"
+              >
+                View
+              </button>
+              <button
+                (click)="deleteList(list.id)"
+                class="btn btn-outline-danger btn-sm rounded-3"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
 
-  <ng-template #noLists><p>No shopping lists yet.</p></ng-template>
+    <ng-template #noLists><p>No shopping lists yet.</p></ng-template>
+
+    <!-- Buttons container centered below the lists -->
+    <div class="mt-4 d-flex flex-column align-items-center gap-2">
+      <button
+        (click)="openAddListModal()"
+        class="btn btn-primary rounded-5 px-4"
+      >
+        Add New List
+      </button>
+      <app-back-button></app-back-button>
+    </div>
+  </div>
 </div>

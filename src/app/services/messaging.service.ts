@@ -14,7 +14,7 @@ export class MessagingService {
   async requestPermissionAndSaveToken() {
     try {
       const registration = await navigator.serviceWorker.register(
-        '/AngularShoppingList/firebase-messaging-sw.js'
+        '/Shopli/firebase-messaging-sw.js'
       );
 
       const token = await getToken(this.messaging, {

@@ -12,13 +12,12 @@ import { Auth, authState } from '@angular/fire/auth';
   providers: [MessagingService],
 })
 export class AppComponent implements OnInit {
-  title = 'AngularShoppingList';
+  title = 'Shopli';
 
   private messagingService = inject(MessagingService);
   private auth = inject(Auth);
 
   ngOnInit(): void {
-    // Only request permission after the user is authenticated
     authState(this.auth).subscribe((user) => {
       if (user) {
         this.messagingService.requestPermissionAndSaveToken();

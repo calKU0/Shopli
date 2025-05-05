@@ -1,45 +1,62 @@
-<div class="container mt-4" style="max-width: 400px">
-  <h2 class="text-center mb-4">{{ isLoginMode ? "Login" : "Register" }}</h2>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="container m-4" style="max-width: 400px">
+    <h2 class="text-center mb-4">{{ isLoginMode ? "Sign in" : "Sign up" }}</h2>
 
-  <form (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        id="email"
-        [(ngModel)]="email"
-        name="email"
-        required
-        class="form-control"
-      />
+    <form (ngSubmit)="onSubmit()">
+      <div *ngIf="!isLoginMode" class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          [(ngModel)]="fullName"
+          name="fullName"
+          required
+          class="form-control transparent-input"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          class="form-control transparent-input"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          class="form-control transparent-input"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        {{ isLoginMode ? "Sign in" : "Sign up" }}
+      </button>
+    </form>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-link text-white" (click)="toggleMode()">
+        {{ isLoginMode ? "Switch to Sign Up" : "Switch to Sign In" }}
+      </button>
     </div>
 
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input
-        type="password"
-        id="password"
-        [(ngModel)]="password"
-        name="password"
-        required
-        class="form-control"
-      />
+    <div class="text-center">
+      <button
+        class="btn btn-danger mt-2 rounded-5 px-3"
+        (click)="loginWithGoogle()"
+      >
+        {{ isLoginMode ? "Sign in with Google" : "Sign up with Google" }}
+      </button>
     </div>
-
-    <button type="submit" class="btn btn-primary w-100">
-      {{ isLoginMode ? "Login" : "Register" }}
-    </button>
-  </form>
-
-  <div class="text-center mt-3">
-    <button class="btn btn-link" (click)="toggleMode()">
-      {{ isLoginMode ? "Switch to Register" : "Switch to Login" }}
-    </button>
-  </div>
-
-  <div class="text-center">
-    <button class="btn btn-outline-danger mt-2" (click)="loginWithGoogle()">
-      {{ isLoginMode ? "Login with Google" : "Register with Google" }}
-    </button>
   </div>
 </div>

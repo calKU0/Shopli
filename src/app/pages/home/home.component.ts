@@ -8,6 +8,7 @@ import { signOut } from 'firebase/auth';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   private auth = inject(Auth);

@@ -1,29 +1,37 @@
-<div class="container p-3">
-  <app-back-button></app-back-button>
-  <h2 class="mb-3">{{ listName }}</h2>
-  <p class="text-muted mb-4">Planned Date: {{ plannedDate }}</p>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="container p-3 m-3">
+    <h2 class="mb-3">{{ listName }}</h2>
+    <p class="mb-4 secondary-font">Planned Date: {{ plannedDate }}</p>
 
-  <app-add-product
-    [enableScanner]="true"
-    (productAdded)="addItemFromChild($event)"
-  ></app-add-product>
+    <app-add-product
+      [enableScanner]="true"
+      (productAdded)="addItemFromChild($event)"
+    ></app-add-product>
 
-  <h5 class="mb-2">Added Products:</h5>
-  <ul class="list-group mb-4">
-    <li
-      *ngFor="let item of items$ | async"
-      class="list-group-item d-flex justify-content-between align-items-center"
-    >
-      {{ item.name }} (x{{ item.quantity }})
-      <button (click)="removeItem(item.id)" class="btn btn-sm btn-danger">
-        Delete
-      </button>
-    </li>
-  </ul>
+    <h5 class="mb-2 mt-4">Added Products:</h5>
+    <ul class="list-group mb-4 secondary-font">
+      <li
+        *ngFor="let item of items$ | async"
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        {{ item.name }} (x{{ item.quantity }})
+        <button
+          (click)="removeItem(item.id)"
+          class="btn btn-sm btn-danger rounded-4 px-3"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
 
-  <div *ngIf="coordinates" class="mb-3" style="height: 300px">
-    <google-map [center]="coordinates" [zoom]="15" height="100%" width="100%">
-      <map-marker [position]="coordinates" [label]="'Shop'"></map-marker>
-    </google-map>
+    <div *ngIf="coordinates" class="mt-5" style="height: 200px">
+      <google-map [center]="coordinates" [zoom]="15" height="100%" width="100%">
+        <map-marker [position]="coordinates" [label]="'Shop'"></map-marker>
+      </google-map>
+
+      <div class="d-flex justify-content-center">
+        <app-back-button></app-back-button>
+      </div>
+    </div>
   </div>
 </div>
