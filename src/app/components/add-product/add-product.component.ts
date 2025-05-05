@@ -60,12 +60,12 @@ export class AddProductComponent {
   }
 
   addItem() {
-    if (!this.newItemName || !this.newItemQty) return;
+    const name = this.newItemName;
+    const quantity = this.newItemQty;
 
-    this.productAdded.emit({
-      name: this.newItemName,
-      quantity: this.newItemQty,
-    });
+    if (!name || !quantity) return;
+
+    this.productAdded.emit({ name, quantity });
 
     this.newItemName = '';
     this.newItemQty = 1;
