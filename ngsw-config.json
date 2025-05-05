@@ -12,6 +12,9 @@
           "/index.html",
           "/manifest.webmanifest",
           "/firebase-messaging-sw.js",
+          "/icons/",
+          "/app-bg.jpg",
+          "/fonts/",
           "/*.css",
           "/*.js"
         ]
