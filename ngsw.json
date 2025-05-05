@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1746451697696,
+  "timestamp": 1746452268052,
   "index": "C:/Program Files/Git/Shopli/index.html",
   "assetGroups": [
     {
@@ -11,10 +11,11 @@
         "ignoreVary": true
       },
       "urls": [
+        "C:/Program Files/Git/Shopli/app-bg.jpg",
         "C:/Program Files/Git/Shopli/favicon.ico",
         "C:/Program Files/Git/Shopli/firebase-messaging-sw.js",
         "C:/Program Files/Git/Shopli/index.html",
-        "C:/Program Files/Git/Shopli/main-DZ6Z2T77.js",
+        "C:/Program Files/Git/Shopli/main-NWRBHKYT.js",
         "C:/Program Files/Git/Shopli/manifest.webmanifest",
         "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js",
         "C:/Program Files/Git/Shopli/styles-3REZJD6W.css"
@@ -29,7 +30,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "C:/Program Files/Git/Shopli/app-bg.jpg",
         "C:/Program Files/Git/Shopli/fonts/norwester.ttf",
         "C:/Program Files/Git/Shopli/icons/Google_2015_logo.svg.png",
         "C:/Program Files/Git/Shopli/icons/calendar.png",
@@ -67,9 +67,9 @@
     "C:/Program Files/Git/Shopli/icons/icon_96x96.png": "20c86d08f4c2b13550a8f1d0212b5bdb28d1e706",
     "C:/Program Files/Git/Shopli/icons/location.png": "74589547665631f1b36cfb0d66f460fcd4d2ab3b",
     "C:/Program Files/Git/Shopli/icons/party.png": "6d7cc133ee3472b029845103f2d801c985de3636",
-    "C:/Program Files/Git/Shopli/index.html": "eb9ef685984b0cb55c1424a6fb2128fa0a64526b",
-    "C:/Program Files/Git/Shopli/main-DZ6Z2T77.js": "a05bca2b8f167dd14bbed445fd71a768f374a18e",
-    "C:/Program Files/Git/Shopli/manifest.webmanifest": "b00fb86e285eb01933038ab689720d61fae4a78a",
+    "C:/Program Files/Git/Shopli/index.html": "78d41624c83a56865cbc022ad5eda8b651575b7c",
+    "C:/Program Files/Git/Shopli/main-NWRBHKYT.js": "7b845f76ae7e9a4bef1f7d81f45370a20f2ed964",
+    "C:/Program Files/Git/Shopli/manifest.webmanifest": "027b23676ca5a1dab9526caf1d2856fd4c155f73",
     "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "C:/Program Files/Git/Shopli/styles-3REZJD6W.css": "a39a4a9f5c4a7e66dfe99532494a4ba7e45dfd82"
   },
