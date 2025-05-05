@@ -8,11 +8,15 @@ import { BarcodeFormat } from '@zxing/library';
   selector: 'app-add-product',
   standalone: true,
   imports: [CommonModule, FormsModule, ZXingScannerModule],
-  templateUrl: './add-product.component.html'
+  templateUrl: './add-product.component.html',
+  styleUrls: ['./add-product.component.scss'],
 })
 export class AddProductComponent {
   @Input() enableScanner: boolean = false;
-  @Output() productAdded = new EventEmitter<{ name: string; quantity: number }>();
+  @Output() productAdded = new EventEmitter<{
+    name: string;
+    quantity: number;
+  }>();
 
   allowedFormats = [BarcodeFormat.EAN_13];
   isScanning = false;
@@ -40,7 +44,9 @@ export class AddProductComponent {
 
   async fetchProductNameFromBarcode(barcode: string): Promise<string | null> {
     try {
-      const response = await fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`);
+      const response = await fetch(
+        `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`
+      );
       const data = await response.json();
       if (data.status === 1) {
         return data.product.product_name || null;
@@ -58,7 +64,7 @@ export class AddProductComponent {
 
     this.productAdded.emit({
       name: this.newItemName,
-      quantity: this.newItemQty
+      quantity: this.newItemQty,
     });
 
     this.newItemName = '';

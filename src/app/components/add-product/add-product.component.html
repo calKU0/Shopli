@@ -35,21 +35,21 @@
   </div>
 
   <!-- Scanner View -->
-  <div *ngIf="isScanning" class="mt-3">
+  <div *ngIf="isScanning" class="mt-3" style="height: 300px; overflow: hidden">
     <zxing-scanner
       [formats]="allowedFormats"
       (scanSuccess)="onCodeResult($event)"
       [torch]="true"
       class="w-100 border rounded"
-      style="height: 300px"
+      style="height: 100%"
     ></zxing-scanner>
-
-    <button
-      type="button"
-      (click)="stopScanning()"
-      class="btn btn-danger mt-2 w-100"
-    >
-      Cancel Scanning
-    </button>
   </div>
+  <button
+    *ngIf="isScanning"
+    type="button"
+    (click)="stopScanning()"
+    class="btn btn-danger mt-2 w-100"
+  >
+    Cancel Scanning
+  </button>
 </div>
