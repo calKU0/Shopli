@@ -12,11 +12,11 @@ export const notifyUpcomingShopping = onSchedule(
   async () => {
     const db = admin.firestore();
     const now = new Date();
-    const tomorrow = new Date();
-    tomorrow.setDate(now.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split("T")[0];
+    const today = new Date();
+    today.setDate(now.getDate());
+    const todayStr = today.toISOString().split("T")[0];
     const snapshot = await db.collection("shoppingLists")
-      .where("plannedDate", "==", tomorrowStr)
+      .where("plannedDate", "==", todayStr)
       .get();
 
 
@@ -26,14 +26,15 @@ export const notifyUpcomingShopping = onSchedule(
 
       const userDoc = await db.collection("users").doc(userId).get();
       const fcmToken = userDoc.data()?.fcmToken;
+      logger.info(fcmToken);
 
       if (fcmToken) {
         await admin.messaging().send({
           token: fcmToken,
           notification: {
-            title: "🛒 Reminder: Shopping Planned Tomorrow",
-            body: `Your shopping list "${list.name}" 
-            is scheduled for tomorrow.`,
+            title: "🛒 Reminder: Shopping Planned Today",
+            body: Your shopping list "${list.name}" 
+            is scheduled for today.,
           },
         });
       }
