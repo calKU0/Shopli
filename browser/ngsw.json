@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1746268435380,
-  "index": "C:/Program Files/Git/AngularShoppingList/index.html",
+  "timestamp": 1746451697696,
+  "index": "C:/Program Files/Git/Shopli/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "C:/Program Files/Git/AngularShoppingList/favicon.ico",
-        "C:/Program Files/Git/AngularShoppingList/firebase-messaging-sw.js",
-        "C:/Program Files/Git/AngularShoppingList/index.html",
-        "C:/Program Files/Git/AngularShoppingList/main-X42RK6PD.js",
-        "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest",
-        "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js",
-        "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css"
+        "C:/Program Files/Git/Shopli/favicon.ico",
+        "C:/Program Files/Git/Shopli/firebase-messaging-sw.js",
+        "C:/Program Files/Git/Shopli/index.html",
+        "C:/Program Files/Git/Shopli/main-DZ6Z2T77.js",
+        "C:/Program Files/Git/Shopli/manifest.webmanifest",
+        "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js",
+        "C:/Program Files/Git/Shopli/styles-3REZJD6W.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,49 @@
         "ignoreVary": true
       },
       "urls": [
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-128x128.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-144x144.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-152x152.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-192x192.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-384x384.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-512x512.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-72x72.png",
-        "C:/Program Files/Git/AngularShoppingList/icons/icon-96x96.png"
+        "C:/Program Files/Git/Shopli/app-bg.jpg",
+        "C:/Program Files/Git/Shopli/fonts/norwester.ttf",
+        "C:/Program Files/Git/Shopli/icons/Google_2015_logo.svg.png",
+        "C:/Program Files/Git/Shopli/icons/calendar.png",
+        "C:/Program Files/Git/Shopli/icons/gift.png",
+        "C:/Program Files/Git/Shopli/icons/groceries.png",
+        "C:/Program Files/Git/Shopli/icons/icon_128x128.png",
+        "C:/Program Files/Git/Shopli/icons/icon_144x144.png",
+        "C:/Program Files/Git/Shopli/icons/icon_152x152.png",
+        "C:/Program Files/Git/Shopli/icons/icon_384x384.png",
+        "C:/Program Files/Git/Shopli/icons/icon_512x512.png",
+        "C:/Program Files/Git/Shopli/icons/icon_72x72.png",
+        "C:/Program Files/Git/Shopli/icons/icon_96x96.png",
+        "C:/Program Files/Git/Shopli/icons/location.png",
+        "C:/Program Files/Git/Shopli/icons/party.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "C:/Program Files/Git/AngularShoppingList/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "C:/Program Files/Git/AngularShoppingList/firebase-messaging-sw.js": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "C:/Program Files/Git/AngularShoppingList/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "C:/Program Files/Git/AngularShoppingList/index.html": "9d4a665f2fd243cf598b99646e9390ee3cf85ecd",
-    "C:/Program Files/Git/AngularShoppingList/main-X42RK6PD.js": "5df08dc5f35601d12bf6816ffc71e5ec2fd82904",
-    "C:/Program Files/Git/AngularShoppingList/manifest.webmanifest": "b00fb86e285eb01933038ab689720d61fae4a78a",
-    "C:/Program Files/Git/AngularShoppingList/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
-    "C:/Program Files/Git/AngularShoppingList/styles-DPQ53L3S.css": "b8eec02eca9b7c76fee545af7cc67c03bc565a52"
+    "C:/Program Files/Git/Shopli/app-bg.jpg": "6afa95d7b623a2545ce04fa1cd755b5e2a936cd7",
+    "C:/Program Files/Git/Shopli/favicon.ico": "e68d9af50e930db79ace2944bbdef92752247d61",
+    "C:/Program Files/Git/Shopli/firebase-messaging-sw.js": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "C:/Program Files/Git/Shopli/fonts/norwester.ttf": "bdbfe94b604e907c0bd8522e50022926c893cbaf",
+    "C:/Program Files/Git/Shopli/icons/Google_2015_logo.svg.png": "db657473f8af27a5993ceeae68b3ce661f4f5107",
+    "C:/Program Files/Git/Shopli/icons/calendar.png": "6dd1d70b6a18d0669f99f9c1b70c974fb1edcddd",
+    "C:/Program Files/Git/Shopli/icons/gift.png": "b918fc58bfac961963ec60c77dc5fa1fbb6afe96",
+    "C:/Program Files/Git/Shopli/icons/groceries.png": "41289ca02511ffe62f952eabcff3dcf09cdde57c",
+    "C:/Program Files/Git/Shopli/icons/icon_128x128.png": "1619714606c8bc7e4365c1c9a11d75131b42d492",
+    "C:/Program Files/Git/Shopli/icons/icon_144x144.png": "361b562454d6bc8dad6550e234d62de8977db457",
+    "C:/Program Files/Git/Shopli/icons/icon_152x152.png": "1b16ec748004928ebcf6a7ddba95ba0aa259c30a",
+    "C:/Program Files/Git/Shopli/icons/icon_384x384.png": "b8ccf85d9cadd07ffba76e78d2a836540262ab7c",
+    "C:/Program Files/Git/Shopli/icons/icon_512x512.png": "774e6ba8b2becb5c940b89b15e9bb91c325155a0",
+    "C:/Program Files/Git/Shopli/icons/icon_72x72.png": "060e92d080393851674f4265b3c513527d0f7736",
+    "C:/Program Files/Git/Shopli/icons/icon_96x96.png": "20c86d08f4c2b13550a8f1d0212b5bdb28d1e706",
+    "C:/Program Files/Git/Shopli/icons/location.png": "74589547665631f1b36cfb0d66f460fcd4d2ab3b",
+    "C:/Program Files/Git/Shopli/icons/party.png": "6d7cc133ee3472b029845103f2d801c985de3636",
+    "C:/Program Files/Git/Shopli/index.html": "eb9ef685984b0cb55c1424a6fb2128fa0a64526b",
+    "C:/Program Files/Git/Shopli/main-DZ6Z2T77.js": "a05bca2b8f167dd14bbed445fd71a768f374a18e",
+    "C:/Program Files/Git/Shopli/manifest.webmanifest": "b00fb86e285eb01933038ab689720d61fae4a78a",
+    "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "C:/Program Files/Git/Shopli/styles-3REZJD6W.css": "a39a4a9f5c4a7e66dfe99532494a4ba7e45dfd82"
   },
   "navigationUrls": [
     {
