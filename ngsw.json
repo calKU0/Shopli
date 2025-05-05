@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1746452619720,
+  "timestamp": 1746452980156,
   "index": "C:/Program Files/Git/Shopli/index.html",
   "assetGroups": [
     {
@@ -69,7 +69,7 @@
     "C:/Program Files/Git/Shopli/icons/party.png": "6d7cc133ee3472b029845103f2d801c985de3636",
     "C:/Program Files/Git/Shopli/index.html": "3a18b070125c6c2ada3518bd6557d3bd5238d697",
     "C:/Program Files/Git/Shopli/main-UZPH7EKX.js": "0e896cf5f9ef24f0d41bd2b26516a3b9509d1569",
-    "C:/Program Files/Git/Shopli/manifest.webmanifest": "027b23676ca5a1dab9526caf1d2856fd4c155f73",
+    "C:/Program Files/Git/Shopli/manifest.webmanifest": "f09a7bdac822934c75aca865681324b0449ca256",
     "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "C:/Program Files/Git/Shopli/styles-LUBL5RVN.css": "e8cb9f74237dee09f7e077b8b862a8bd6a30dd71"
   },
