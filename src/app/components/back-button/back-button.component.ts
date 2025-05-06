@@ -8,7 +8,7 @@ import { inject } from '@angular/core';
   selector: 'app-back-button',
   standalone: true,
   template: `
-    <button class="btn btn-secondary mt-3 rounded-5" (click)="goBack()">
+    <button class="btn btn-secondary mt-4 rounded-3" (click)="goBack()">
       ← Back
     </button>
   `,
