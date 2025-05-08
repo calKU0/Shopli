@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1746453522928,
+  "timestamp": 1746725659112,
   "index": "C:/Program Files/Git/Shopli/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "C:/Program Files/Git/Shopli/favicon.ico",
         "C:/Program Files/Git/Shopli/firebase-messaging-sw.js",
         "C:/Program Files/Git/Shopli/index.html",
-        "C:/Program Files/Git/Shopli/main-GI7P4ZKX.js",
+        "C:/Program Files/Git/Shopli/main-ZQFLAUFF.js",
         "C:/Program Files/Git/Shopli/manifest.webmanifest",
         "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js",
         "C:/Program Files/Git/Shopli/styles-LUBL5RVN.css"
@@ -67,8 +67,8 @@
     "C:/Program Files/Git/Shopli/icons/icon_96x96.png": "20c86d08f4c2b13550a8f1d0212b5bdb28d1e706",
     "C:/Program Files/Git/Shopli/icons/location.png": "74589547665631f1b36cfb0d66f460fcd4d2ab3b",
     "C:/Program Files/Git/Shopli/icons/party.png": "6d7cc133ee3472b029845103f2d801c985de3636",
-    "C:/Program Files/Git/Shopli/index.html": "4f7d20c54657a67e3dff78d61bf05bd9aaac2126",
-    "C:/Program Files/Git/Shopli/main-GI7P4ZKX.js": "522c8a3c00a7a75bca58a6102c8c85bb8d073ae7",
+    "C:/Program Files/Git/Shopli/index.html": "257d92174f0ace0d9f2bd94f0b110f9bf7e90375",
+    "C:/Program Files/Git/Shopli/main-ZQFLAUFF.js": "f753c974e96cd6e9147138837839b83d8d8b8fb6",
     "C:/Program Files/Git/Shopli/manifest.webmanifest": "f09a7bdac822934c75aca865681324b0449ca256",
     "C:/Program Files/Git/Shopli/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "C:/Program Files/Git/Shopli/styles-LUBL5RVN.css": "e8cb9f74237dee09f7e077b8b862a8bd6a30dd71"
