@@ -1,6 +1,6 @@
 # Shopli
 
-> 🎓 Status: Academic Project — developed as part of Mobile Application Programming at University of Economics in Carcow.
+> 🎓 **Academic Project** — developed as part of Mobile Application Programming at University of Economics in Cracow.
 
 
 **Shopli** is a responsive Progressive Web App (PWA) built with Angular, designed to help users plan and manage their shopping trips more efficiently.
