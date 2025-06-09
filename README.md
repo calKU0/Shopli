@@ -1,59 +1,106 @@
-# ListaZakupow
+# Shopli
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+**Shopli** is a responsive Progressive Web App (PWA) built with Angular, designed to help users plan and manage their shopping trips more efficiently.
 
-## Development server
+## 🌟 Features
 
-To start a local development server, run:
+- **User Authentication**: Sign in using email/password or Google account.
+- **Smart Shopping Lists**:
+  - Create shopping lists with planned dates.
+  - Add products manually or by scanning barcodes.
+  - Select a nearby shop using Google Maps integration.
+- **Modify or Delete Lists**: Easily update or remove lists as plans change.
+- **Cloud-Based Storage**: All data is securely stored using Firebase.
+- **Smart Notifications**: Users receive a notification at 9:00 AM on the day of planned shopping via Google Cloud Messaging and Functions.
+- **PWA Support**: Install the app on your device and use it offline like a native app.
+
+## 🚀 Technologies Used
+
+- **Angular**
+- **Firebase (Firestore, Authentication, Cloud Functions, Messaging)**
+- **Google Maps API**
+- **Google Cloud Messaging**
+- **Barcode Scanning**
+- **PWA Configuration**
+
+## 🔧 Environment Configuration
+
+Use the following structure in your `environment.ts`:
+
+```ts
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'key',
+    authDomain: 'key',
+    projectId: 'key',
+    storageBucket: 'key',
+    messagingSenderId: 'key',
+    appId: 'key',
+    measurementId: 'key',
+    vapidKey: 'key',
+  },
+  googleMapsApiKey: 'key',
+};
+```
+
+## 🛠 Development
+
+### Start Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to http://localhost:4200/ in your browser. The app reloads automatically when changes are made.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Build for Production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Run Unit Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Run End-to-End Tests
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📱 PWA Installation
 
-## Additional Resources
+You can install Shopli on your device by visiting the app in a browser and choosing the "Add to Home Screen" option.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📬 Notifications
+
+Google Cloud Messaging is used to notify users of upcoming shopping trips at 9:00 AM on the planned day. Ensure push notifications are enabled and permissions are granted.
+
+## 📂 Folder Structure
+
+```plaintext
+Shopli/
+├── src/
+│   ├── app/
+│   ├── assets/
+│   └── environments/
+├── angular.json
+├── package.json
+└── README.md
+```
+
+## 🤝 Contributions
+
+Feel free to fork this repository, make changes, and submit a pull request!
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+© 2025 [calKU0](https://github.com/calKU0)
